@@ -1,0 +1,162 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+header .logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+nav a {
+    color: #555;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+nav a.active {
+    font-weight: 700;
+    color: #007bff;
+}
+
+nav a:hover {
+    color: #007bff;
+}
+
+main {
+    padding-top: 6rem; /* Space for the fixed header */
+}
+
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.co/1920x1080/444/fff?text=Your+Hero+Image+Here') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    height: calc(100vh - 6rem); /* Full height minus header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+.cta-button.small {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+.about-section, .projects-section {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.about-section h1, .projects-section h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.skills-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.skills-list li {
+    background-color: #e2e2e2;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.project-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.project-card:nth-child(even) {
+    flex-direction: column; /* Or you can reverse the order for a different layout on desktop */
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-details {
+    padding: 1.5rem;
+}
+
+.project-details h3 {
+    margin-top: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #f4f4f4;
+    margin-top: 2rem;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .project-card {
+        flex-direction: row;
+    }
+    .project-card:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+    .project-image, .project-details {
+        flex: 1;
+    }
+}
