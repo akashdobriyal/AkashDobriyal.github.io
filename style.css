@@ -2,14 +2,15 @@ body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text for contrast */
     line-height: 1.6;
 }
 
 header {
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,76 +25,89 @@ header {
 header .logo {
     font-weight: 700;
     font-size: 1.5rem;
+    color: #fff;
+    letter-spacing: 1px;
 }
 
 nav a {
-    color: #555;
+    color: #a0a0a0;
     text-decoration: none;
-    margin-left: 1.5rem;
-    font-weight: 400;
-    transition: color 0.3s ease;
+    margin-left: 2rem;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
 }
 
 nav a.active {
-    font-weight: 700;
-    color: #007bff;
+    color: #fff;
+    transform: translateY(-2px);
 }
 
 nav a:hover {
-    color: #007bff;
+    color: #00bcd4; /* A vibrant, modern accent color */
+    transform: translateY(-2px);
 }
 
 main {
-    padding-top: 6rem; /* Space for the fixed header */
+    padding-top: 6rem;
 }
 
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.co/1920x1080/444/fff?text=Your+Hero+Image+Here') no-repeat center center/cover;
+    background: linear-gradient(135deg, #1f1f1f 0%, #0a0a0a 100%);
     color: #fff;
     text-align: center;
-    height: calc(100vh - 6rem); /* Full height minus header */
+    height: calc(100vh - 6rem);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .hero-content h1 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 4rem); /* Responsive font size */
     margin-bottom: 0.5rem;
+    letter-spacing: 2px;
 }
 
 .hero-content p {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 2vw, 1.25rem);
     margin-bottom: 2rem;
+    color: #c0c0c0;
 }
 
 .cta-button {
-    background-color: #007bff;
+    background-color: #00bcd4;
     color: #fff;
-    padding: 0.75rem 1.5rem;
+    padding: 0.8rem 2rem;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border-radius: 50px; /* Fully rounded buttons */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 .cta-button:hover {
-    background-color: #0056b3;
+    background-color: #008ba8;
+    transform: translateY(-2px);
 }
 
 .cta-button.small {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
+    border-radius: 20px;
 }
 
 .about-section, .projects-section {
-    max-width: 960px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 4rem 2rem;
 }
 
 .about-section h1, .projects-section h1 {
     text-align: center;
     margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #fff;
 }
 
 .skills-list {
@@ -103,27 +117,33 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
+    margin-top: 2rem;
 }
 
 .skills-list li {
-    background-color: #e2e2e2;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
 }
 
 .project-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
     display: flex;
     flex-direction: column;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-card:nth-child(even) {
-    flex-direction: column; /* Or you can reverse the order for a different layout on desktop */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.7);
 }
 
 .project-image img {
@@ -133,22 +153,24 @@ main {
 }
 
 .project-details {
-    padding: 1.5rem;
+    padding: 2rem;
 }
 
 .project-details h3 {
     margin-top: 0;
+    color: #fff;
+    font-size: 1.75rem;
 }
 
 footer {
     text-align: center;
-    padding: 1rem;
-    background-color: #333;
-    color: #f4f4f4;
-    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #0a0a0a;
+    color: #606060;
+    margin-top: 4rem;
+    font-size: 0.8rem;
 }
 
-/* Responsive adjustments */
 @media (min-width: 768px) {
     .project-card {
         flex-direction: row;
@@ -160,3 +182,4 @@ footer {
         flex: 1;
     }
 }
+
